@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: demo-ui
-        image: gcr.io/dtc-092021-u509/external-image@sha256:be9b7503210958efa9a5196187ccb91182be6ee29c377591aad033b5ff771e0e
+        image: gcr.io/dtc-092021-u509/external-image@sha256:35175b591cf2d3f2095f9178b62ea5eb17276c05d94a3c004721abaa6e809674
         env: 
         - name: SERVER
           value: "http://demo-service:8082"
