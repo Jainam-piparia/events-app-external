@@ -14,10 +14,12 @@ spec:
     spec:
       containers:
       - name: demo-api
-        image: gcr.io/dtc-092021-u509/internal-image:v1.0.0
+        image: gcr.io/dtc-092021-u509/internal-image@sha256:9ae9f7c12c66733124452484b50d2bcd67afa51b03fa5898352f9e2567c719e7
         env: 
         - name: PORT
           value: "8082"
+        - name: GOOGLE_CLOUD_PROJECT
+          value: "dtc-092021-u509"
         ports:
         - containerPort: 8082
             
