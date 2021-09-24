@@ -7,15 +7,15 @@ describe('GET /', function () {
   it('responds with home page', function (done) {
 
     //specify the url to be intercepted
-    nock("http://localhost:8080")
+    nock("http://localhost:8082")
       //define the method to be intercepted
       .get('/events')
       //respond with a OK and the specified JSON response
       .reply(200, {
         "status": 200,
         "events": [
-          { title: 'PRE Lunch Party', id: 1, description: 'Introduction to Cloud Computing' },
-          { title: 'Post Lunch Party', id: 2, description: 'Case study and Exercises' },
+          { "title": 'an event', "id": 1234, "description": 'something really cool' },
+          { "title": 'another event', id: 5678, "description": 'something even cooler' }
         ]
       });
 
@@ -66,15 +66,15 @@ describe('POST /event', function () {
   it('adds an event', function (done) {
   const data = { title: 'test event', description: 'even cooler test' };
     //specify the url to be intercepted
-    nock("http://localhost:8080")
+    nock("http://localhost:8082")
       //define the method to be intercepted
       .post('/event')
       //respond with a OK and the specified JSON response
       .reply(200, {
         "status": 200,
         "events": [
-          { title: 'PRE Lunch Party', id: 1, description: 'Introduction to Cloud Computing' },
-          { title: 'Post Lunch Party', id: 2, description: 'Case study and Exercises' },
+          { title: 'an event', id: 1, description: 'something really cool' },
+          { title: 'another event', id: 2, description: 'something even cooler' },
           data
         ]
       });
